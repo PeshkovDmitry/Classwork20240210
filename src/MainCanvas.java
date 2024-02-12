@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,9 +12,40 @@ public class MainCanvas extends JPanel {
     MainCanvas() {
         lastFrameTime = System.nanoTime();
         interactables.add(new Background());
-        for (int i = 1; i < 10; i++) {
-            interactables.add(new Ball());
-        }
+//        for (int i = 1; i < 10; i++) {
+//            interactables.add(new Ball());
+//        }
+        this.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                interactables.add(
+                        new Ball(
+                                e.getX(),
+                                e.getY()
+                        )
+                );
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
     }
 
     @Override
