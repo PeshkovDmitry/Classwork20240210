@@ -7,7 +7,7 @@ public class MainCanvas extends JPanel {
     private long lastFrameTime;
 
     MainCanvas(MainWindow controller) {
-        setBackground(Color.BLUE);
+//        setBackground(Color.BLUE);
         this.controller = controller;
         lastFrameTime = System.nanoTime();
     }

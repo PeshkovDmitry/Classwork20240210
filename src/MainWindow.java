@@ -14,7 +14,8 @@ public class MainWindow extends JFrame {
         setBounds(POS_X, POS_Y, WINDOW_WIDTH, WINDOW_HEIGHT);
         setTitle("Circles");
 
-        for (int i = 0; i < sprites.length; i++) {
+        sprites[0] = new Background();
+        for (int i = 1; i < sprites.length; i++) {
             sprites[i] = new Ball();
         }
 
