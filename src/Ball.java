@@ -33,8 +33,7 @@ public class Ball extends Sprite {
 //                (int) getWidth(), (int) getHeight());
         try {
             BufferedImage image = ImageIO.read(new File("image.png"));
-            g.drawImage(image, (int) x, (int) y, null);
-
+            g.drawImage(image, (int) x, (int) y, (int) getWidth(), (int) getHeight(), Color.WHITE, null);
         } catch (IOException e) {}
     }
 
