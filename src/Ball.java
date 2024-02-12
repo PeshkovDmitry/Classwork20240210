@@ -1,4 +1,8 @@
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Random;
 
 public class Ball extends Sprite {
@@ -27,6 +31,11 @@ public class Ball extends Sprite {
         g.setColor(color);
         g.fillOval((int) getLeft(), (int) getTop(),
                 (int) getWidth(), (int) getHeight());
+//        try {
+//            BufferedImage image = ImageIO.read(new File("image.png"));
+//            g.drawImage(image, 100, 100, null);
+//
+//        } catch (IOException e) {}
     }
 
     @Override
