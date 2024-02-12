@@ -28,14 +28,14 @@ public class Ball extends Sprite {
 
     @Override
     public void render(MainCanvas canvas, Graphics g) {
-        g.setColor(color);
-        g.fillOval((int) getLeft(), (int) getTop(),
-                (int) getWidth(), (int) getHeight());
-//        try {
-//            BufferedImage image = ImageIO.read(new File("image.png"));
-//            g.drawImage(image, 100, 100, null);
-//
-//        } catch (IOException e) {}
+//        g.setColor(color);
+//        g.fillOval((int) getLeft(), (int) getTop(),
+//                (int) getWidth(), (int) getHeight());
+        try {
+            BufferedImage image = ImageIO.read(new File("image.png"));
+            g.drawImage(image, (int) x, (int) y, null);
+
+        } catch (IOException e) {}
     }
 
     @Override
