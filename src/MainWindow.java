@@ -9,6 +9,7 @@ public class MainWindow extends JFrame {
 
 
     private MainWindow() {
+        Thread.setDefaultUncaughtExceptionHandler(new ErrorHandler());
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(POS_X, POS_Y, WINDOW_WIDTH, WINDOW_HEIGHT);
         setTitle("Circles");
@@ -18,7 +19,12 @@ public class MainWindow extends JFrame {
     }
 
     public static void main(String[] args) {
-        new MainWindow();
-    }
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new MainWindow();
+            }
+        });
 
+    }
 }

@@ -18,7 +18,8 @@ public class MainCanvas extends JPanel {
             public void mouseClicked(MouseEvent e) {
                 if (e.getButton() == MouseEvent.BUTTON1) {
                     if (interactables.size() == 16) {
-                        JOptionPane.showMessageDialog(null, "Нельзя создавать более 15 шариков");
+//                        JOptionPane.showMessageDialog(null, "Нельзя создавать более 15 шариков");
+                        throw new RuntimeException();
                     } else {
                         interactables.add(
                                 new Ball(
