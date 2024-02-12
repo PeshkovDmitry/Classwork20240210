@@ -18,12 +18,22 @@ public class MainCanvas extends JPanel {
         this.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                interactables.add(
-                        new Ball(
-                                e.getX(),
-                                e.getY()
-                        )
-                );
+                if (e.getButton() == MouseEvent.BUTTON1) {
+                    interactables.add(
+                            new Ball(
+                                    e.getX(),
+                                    e.getY()
+                            )
+                    );
+                }
+                else if (e.getButton() == MouseEvent.BUTTON3) {
+                    for (int i = 0; i < interactables.size(); i++) {
+                        Sprite sprite = (Sprite) interactables.get(i);
+                        if (sprite.inSprite(e.getX(), e.getY())) {
+                            interactables.remove(i);
+                        }
+                    }
+                }
             }
 
             @Override

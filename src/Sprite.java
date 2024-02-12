@@ -38,6 +38,13 @@ public abstract class Sprite implements Interactable {
         return 2f * halfHeight;
     }
 
+    public boolean inSprite(int x, int y) {
+        return  x >= this.x - halfWidth
+                && x <= this.x + halfWidth
+                && y >= this.y - halfHeight
+                && y <= this.y + halfHeight;
+    }
+
     public void update(MainCanvas canvas, float deltaTime) {}
     public void render(MainCanvas canvas, Graphics g) {}
 
