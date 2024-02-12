@@ -6,25 +6,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainCanvas extends JPanel {
+
     private long lastFrameTime;
     private List<Interactable> interactables = new ArrayList<>();
 
     MainCanvas() {
         lastFrameTime = System.nanoTime();
         interactables.add(new Background());
-//        for (int i = 1; i < 10; i++) {
-//            interactables.add(new Ball());
-//        }
         this.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if (e.getButton() == MouseEvent.BUTTON1) {
-                    interactables.add(
-                            new Ball(
-                                    e.getX(),
-                                    e.getY()
-                            )
-                    );
+                    if (interactables.size() == 16) {
+                        JOptionPane.showMessageDialog(null, "Нельзя создавать более 15 шариков");
+                    } else {
+                        interactables.add(
+                                new Ball(
+                                        e.getX(),
+                                        e.getY()
+                                )
+                        );
+                    }
                 }
                 else if (e.getButton() == MouseEvent.BUTTON3) {
                     for (int i = 0; i < interactables.size(); i++) {
